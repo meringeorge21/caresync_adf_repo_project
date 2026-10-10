@@ -50,7 +50,7 @@
 						"referenceName": "ds_adls",
 						"type": "DatasetReference",
 						"parameters": {
-							"conatiner": "conatiner",
+							"conatiner": "landing",
 							"folder": "test"
 						}
 					}
