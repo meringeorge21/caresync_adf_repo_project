@@ -46,13 +46,34 @@
 					"items": {
 						"value": "@activity('read table info').output.firstRow",
 						"type": "Expression"
-					}
+					},
+					"activities": [
+						{
+							"name": "test",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "test",
+								"value": ""
+							}
+						}
+					]
 				}
 			}
 		],
 		"parameters": {
 			"table_id": {
 				"type": "string"
+			}
+		},
+		"variables": {
+			"test": {
+				"type": "String"
 			}
 		},
 		"annotations": []
