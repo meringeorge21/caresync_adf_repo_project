@@ -32,41 +32,20 @@
 				}
 			},
 			{
-				"name": "Ingest all tables",
-				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "read table info",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"name": "starttime",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
 				"userProperties": [],
 				"typeProperties": {
-					"items": {
-						"value": "@activity('read table info').output.firstRow",
+					"variableName": "start_time",
+					"value": {
+						"value": "@utcNow('yyyy-MM-dd HH:mm:ss')",
 						"type": "Expression"
-					},
-					"activities": [
-						{
-							"name": "test",
-							"type": "SetVariable",
-							"dependsOn": [],
-							"policy": {
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"variableName": "test",
-								"value": {
-									"value": "@string(item().table_id)",
-									"type": "Expression"
-								}
-							}
-						}
-					]
+					}
 				}
 			}
 		],
@@ -78,6 +57,9 @@
 		},
 		"variables": {
 			"test": {
+				"type": "String"
+			},
+			"start_time": {
 				"type": "String"
 			}
 		},
