@@ -12,8 +12,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"secretName": "azure-databric-ktoken"
-			},
-			"existingClusterId": "1012-132333-yblkgi3r"
+			}
 		}
 	}
 }
